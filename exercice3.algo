@@ -1,0 +1,29 @@
+ALGORITHM table 
+VAR tab1:array_name : ARRAY_OF INTEGER,
+   tab2:array_name : ARRAY_OF INTEGER,
+  i, j  :INTEGER,
+  HASH_TABLE<table,INTEGER>
+BEGIN
+sum:=0
+FOR i FROM 0 TO tab1.length -1  DO
+ HASH.insert(tab1[i],1)
+ END_FOR
+    FOR j FROM 0 TO tab2.length -1  DO
+        IF (HASH.lookup(tab2[j]=true)) THEN
+            HASH.insert(tab2[j],2)
+            else 
+            HASH.insert(tab2[j],1)
+        END_IF
+    END_FOR 
+FOR i FROM 0 TO tab1.length-1   DO
+    IF (hash.get(tab1[i]=2) THEN
+        sum:= sum + tab1[i] *2
+    END_IF
+END_FOR;
+FOR j FROM 0 TO tab2.length-1   DO
+    IF (hash.get(tab2[j]=1) THEN
+        sum:= sum + tab2[j]
+    END_IF
+END_FOR
+write(sum);
+END.
